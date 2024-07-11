@@ -1,9 +1,9 @@
-fn main(){
+fn main() {
     let s: &str = "hello, world";
     greetings(s.to_string())
 }
 
-fn greetings(s: String){
+fn greetings(s: String) {
     println!("{}", s)
 }
 
