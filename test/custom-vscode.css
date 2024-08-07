@@ -1,0 +1,19 @@
+.quick-input-filter  {
+    border-radius: 12px !important;
+    padding: 8px !important;
+    border: none !important;
+    background-color: rgba(34, 34, 34, .40) !important;
+    font-family: "Geist Mono" !important;
+    font-size: 14px !important;
+    margin-bottom: 16px !important;
+}
+
+#command-blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .15);
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(8px);
+}
