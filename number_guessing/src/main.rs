@@ -1,7 +1,6 @@
 use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
-
 fn main() {
     loop {
         println!("Guess the number!");
@@ -45,4 +44,12 @@ fn main() {
     }
 
     println!("Thanks for playing!");
+}
+#[cfg(test)]
+mod test {
+    const number: i32 = 5;
+    #[test]
+    fn test_something() {
+        assert_eq!(number, 5);
+    }
 }
