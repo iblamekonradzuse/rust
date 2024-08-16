@@ -1,0 +1,10 @@
+Person 1:Name:charles;money:500;
+Person 2:Name:tgharles;money:123500;
+Person 3:Name:oaharles;money:123500;
+Person 4:Name:keharles;money:123500;
+Person 5:Name:aaaacharles;money:123500;
+Person 6:Name:sdsadcharles;money:213500;
+Person 7:Name:asdasdasdcharles;money:544400;
+Person 8:Name:asdasdcharles;money:5100;
+Person 9:Name:qqqqqcharles;money:5200;
+Person 10:Name:zzzzzzzzzcharles;money:500;
