@@ -1,0 +1,9 @@
+mod variables_4;
+mod variables_6;
+mod variables_destructuring;
+mod variables_destructuring_assignments;
+mod variables_mutable;
+mod variables_mutable2;
+mod variables_scopre;
+mod variables_shadowing;
+mod variables_unused_variables;
