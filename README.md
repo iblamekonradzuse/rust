@@ -6,7 +6,7 @@
 developed by @zubiarfan <br>
 
 <h3>📚Github Repositories </h3> <li>
-<a href="https://github.com/TheAlgorithms/Rust"> The Algorithms - Rust </a> <br>"
+<a href="https://github.com/TheAlgorithms/Rust"> The Algorithms - Rust </a> <br>
 
 <h3>🔗 Websites </h3> <li>
  <a href="https://practice.rs/">  Rust by Practice</a> </br>
