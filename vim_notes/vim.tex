@@ -1,0 +1,175 @@
+
+\documentclass{report}
+\usepackage[top=0.7in, bottom=0.7in, left=2in, right=2in]{geometry} %for setting the margins
+\usepackage{amsmath} % for the equation* environment
+\usepackage{xcolor} % for the \textcolor command
+\usepackage{tcolorbox} % for the tcolorbox environment
+\renewcommand\thesection{\arabic{section}}  % Section numbers without chapter
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\setcounter{secnumdepth}{3} % Numbering subsubsections
+\fontsize{14pt}{16pt}
+\title{ Vim Notes \\}
+
+\date{23/08/2024}
+\author{Can Caliskan}
+\begin{document}
+  \maketitle
+  \raggedright %makes it left aligned, usefull for not getting errors after using /newline
+\tableofcontents %creates a table of content
+\newpage
+\section{Movement Commands}
+\subsection{Basic Movement}
+\begin{itemize}
+\item `M`: Move to the middle of the screen.
+\item `L`: Move to the bottom of the screen.
+\item  `H`: Moves the cursor to the top of the screen.
+\item `5gg` or `5G`: Go to line 5.
+\item `fx`: Jump to the next occurrence of character x.
+\item `j`, `k`: Move down and up respectively.
+\item `h`, `l`: Move left and right respectively.
+\item `5j`, `5k`: Move 5 lines down or up.
+	\subsection{Line Navigation}
+\item \$: End of the line.
+\item 0: Beginning of the line.
+\item \_: First character of the line.
+	\subsection{Scrolling}
+\item `Ctrl + e`: Scroll screen down one line.
+\item `Ctrl + y`: Scroll screen up one line.
+\item `Ctrl + f`: Scroll full page down.
+\item `Ctrl + b`: Scroll full page up.
+\item `Ctrl + d`: Scroll half page down.
+\item `Ctrl + u`: Scroll half page up.
+
+	\subsection{Word and Sentence Navigation}
+\item `w`: Move forward word by word.
+\item `b`: Move backward word by word.
+\item `e`: Jump to the end of a word.
+\item `f.`, `F.`: Move to the next/previous occurrence of the period.
+\item `(`, `)`: Move up or down by sentence.
+\item `{`, `}`: Move up or down by paragraph.
+	\subsection{File Navigation}
+\item `gg`: Go to the start of the file.
+\item `G`: Go to the end of the file.
+\item `10gg`: Go to line 10.
+	\subsection{Cursor Positioning}
+\item `H`, `M`, `L`: Move the cursor to the top, middle, or bottom of the screen.
+\item `Ctrl + w + h/j/k/l`: Navigate between split windows.
+	\section{Insert Mode}
+	\subsection{Basic Insert Commands}
+\item `i`: Insert before the cursor.
+\item `a`: Insert after the cursor.
+\item `I`: Insert at the beginning of the line.
+\item `A`: Insert at the end of the line.
+\item `o`: Open a new line below the current line.
+\item `O`: Open a new line above the current line.	
+	\subsection{. Text Manipulation}
+\item `c`: Change a word.
+\item `s`: Replace the current character.
+\item `ci"`, `di(`: Change or delete inside quotes/parentheses.
+	\section{Copy, Paste, and Undo}
+
+	\subsection{Basic Operations}
+\item `y`: Yank (copy).
+\item `p`: Paste.
+\item `yy`: Copy a line.
+\item `u`: Undo the last change.
+\item `Ctrl + r`: Redo the last undone change.
+	\subsection{Deleting}
+\item `diw`: Delete a word.
+\item `dis`: Delete a sentence.
+\item `dip`: Delete a paragraph.
+\item `dd`: Delete a line.
+\item `dtX.`: Delete up to but not including X.
+	\section{Searching and Replacing}
+	\subsection{. Searching}
+\item `/`: Search forward.
+\item `n`: Move to the next occurrence.
+\item `N`: Move to the previous occurrence.
+\item `*`: Search for the word under the cursor.
+\item `?`: Backward search.
+	\subsection{Replacing}
+\item `:s/thee/the/g`: Replace "thee" with "the" in the current line.
+\item `:%s/old/new/g`: Replace every occurrence of "old" with "new" in the whole file.
+\item `:\#,\#s/old/new/g`: Replace within a specific range of lines.
+	\subsection{ Bookmarks and Macros}
+	\subsection{. Bookmarks}
+\item `ma`: Mark bookmark "a".
+\item `'a`: Go to bookmark "a".
+\item `:marks`: List all bookmarks.
+\item `:delmarks a`: Delete bookmark "a".
+	\subsection{Macros}
+\item `q + {letter}`: Start recording a macro.
+\item `q`: Stop recording.
+\item `@{letter}`: Replay macro.
+\item `5@{letter}`: Replay macro 5 times.
+	\section{Visual Mode}
+	\subsection{. Basic Visual Mode}
+\item `v`: Start visual mode.
+\item `V`: Start visual line mode.
+\item `Ctrl + v`: Start visual block mode.
+\item `shift + v`: Highlight the whole line.
+\item `shift + j`: Join the line below to the current line.
+	\subsection{Text Selection}
+\item `vi(`: Select inside parentheses.
+\item `va(`: Select around parentheses.
+\item `vip`: Select inside paragraph.
+	\subsection{Visual Mode Editing}
+\item `gv`: Re-select the last visual selection.
+\item `U`: Uppercase the selected text.
+\item `shift + ~`: Toggle case of the selected character.
+	\section{Advanced Commands}
+	\subsection{. Split Windows}
+\item `Ctrl + w + s`: Split window horizontally.
+\item `Ctrl + w + v`: Split window vertically.
+\item `:new`: Open a new buffer.
+\item `:tabe filename`: Open the file in a new tab.
+	\subsection{Line Operations}
+\item `J`: Join two lines.
+\item `:m-2`: Move current line up by two lines.
+\item `m+2`: Move current line down by two lines.
+	\subsection{Registers}
+\item `"3p`: Paste from the 3rd register.
+\item `"7y`: Yank into the 7th register.
+\item `:reg`: List all registers.
+\item `put a`: Paste register "a" content.
+	\subsection{Increment and Decrement}
+\item `Ctrl + a`: Increment a number under the cursor.
+\item `Ctrl + x`: Decrement a number under the cursor.
+	\section{Plugin and Tools}
+	\subsection{. Harpoon}
+\item `qq`: Open Harpoon menu.
+\item `qw`: Add Harpoon.
+\item `leader + 1/2/3`: Navigate Harpoon marks.
+\item `t1`, `t2`: Open terminal 1 and 2.
+
+	\subsection{Oil.nvim}
+- File management and navigation.
+\item `-`: open file explorer.
+
+\subsection{Other Useful Plugins}
+\item `gitsigns`: Git integration.
+\item `mason`: Manage language servers.
+\item `Telescope`: Fuzzy finder.
+\item `Glow`: Markdown viewer.
+	\section{Miscellaneous}
+	\subsection{. Clipboard and Registers}
+\item `"*`: Access system clipboard.
+\item `"3p`: Paste from register 3.
+
+	\subsection{File Operations}
+\item `:wqa`: Write and quit all files.
+\item `ZZ`: Save and quit.
+\item `ZQ`: Quit without saving.
+\item `:!sort`: Sort selected lines.
+\item `:! figlet`: ASCII art generator.
+
+	\subsection{Other Shortcuts}
+\item `Ctrl + z`: Suspend Neovim, `fg` to resume.
+\item `Ctrl + s`: Open in split.
+\item `gf`: Open file under cursor.
+\item `gx`: Open link in browser.
+\end{itemize}
+
+
+\end{document}
+
